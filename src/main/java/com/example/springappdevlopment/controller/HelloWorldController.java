@@ -12,5 +12,10 @@ public class HelloWorldController {
         return "Hello from Shalesh dutt";
     }
 
+    // localhost:8080/hello/query
+    @RequestMapping(value = {"/query"}, method = RequestMethod.GET)
+    public String sayhello(@RequestParam(value = "name") String name) {
+        return "Hello" + name + "!";
+    }
 
 }
