@@ -34,4 +34,12 @@ public class HelloWorldController {
     public String sayhello(@RequestBody User user) {
         return "Hello" + user.getFirstName() + " " + user.getLastName() + "!";
     }
+
+    //PutMapping method is used to modify/update a resource where the client sends data that updates
+    // the entire resource
+    @PutMapping("/put/{firstname}")
+    public String sayhello(@PathVariable String firstname,
+                           @RequestParam(value = "lastname") String lastname) {
+        return "Hello" + firstname + " " + lastname + "!";
+    }
 }
