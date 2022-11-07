@@ -18,4 +18,11 @@ public class HelloWorldController {
         return "Hello" + name + "!";
     }
 
+    // localhost:8080/hello/param/shalesh
+    //@PathVariable annotation is used to extract the value from the URL
+    @GetMapping("/param/{name}")
+    public String sayHelloParam(@PathVariable String name) {
+        return "Hello " + name + "!";
+    }
+
 }
